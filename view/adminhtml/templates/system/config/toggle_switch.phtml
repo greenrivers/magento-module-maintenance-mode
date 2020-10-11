@@ -1,0 +1,36 @@
+<?php
+/**
+ * @author GreenRivers Team
+ * @copyright Copyright (c) 2020 GreenRivers
+ * @package GreenRivers_MaintenanceMode
+ */
+
+use GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch;
+
+/** @var ToggleSwitch $block */
+$component = $block->getComponent();
+?>
+<div id="<?= /* @noEscape */ $component['id'] ?>" data-bind="scope: '<?= /* @noEscape */ $component['id'] ?>-scope'">
+    <label class="switch">
+        <input type="hidden" name="<?= /* @noEscape */ $component['name'] ?>"
+               data-bind="value: getValue()"/>
+        <input type="checkbox" data-bind="checked: isChecked">
+        <span data-bind="css: { sliderOne: isChecked, slider: !isChecked() }" class="round" id="spa"></span>
+    </label>
+    <span id="toggle" data-bind="text: text"></span>
+</div>
+
+<script type="text/x-magento-init">
+{
+  "#<?= /* @noEscape */ $component['id'] ?>": {
+        "Magento_Ui/js/core/app": {
+        "components":{
+          "<?= /* @noEscape */ $component['id'] ?>-scope":{
+            "component":"GreenRivers_MaintenanceMode/js/system/config/<?= /* @noEscape */ $component['id'] ?>",
+            "isChecked": <?= /* @noEscape */ json_encode($component['value']) ?>
+          }
+        }
+      }
+  }
+}
+</script>

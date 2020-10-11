@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author GreenRivers Team
+ * @copyright Copyright (c) 2020 GreenRivers
+ * @package GreenRivers_MaintenanceMode
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <maintenance_mode>
+            <general>
+                <enabled>1</enabled>
+            </general>
+            <settings>
+                <frontend>0</frontend>
+                <backend>0</backend>
+            </settings>
+            <page>
+                <custom>0</custom>
+            </page>
+            <cron>
+                <frontend>
+                    <enabled>0</enabled>
+                    <frequency>D</frequency>
+                    <time_start>00,00,00</time_start>
+                    <time_end>00,00,00</time_end>
+                </frontend>
+                <backend>
+                    <enabled>0</enabled>
+                    <frequency>D</frequency>
+                    <time>00,00,00</time>
+                    <time_end>00,00,00</time_end>
+                </backend>
+            </cron>
+        </maintenance_mode>
+    </default>
+</config>
