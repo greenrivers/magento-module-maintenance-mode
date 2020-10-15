@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author GreenRivers Team
+ * @copyright Copyright (c) 2020 GreenRivers
+ * @package GreenRivers_MaintenanceMode
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_maintenance_mode">
+        <observer name="Green_Rivers_maintenance_mode_save_config"
+                  instance="GreenRivers\MaintenanceMode\Observer\SaveConfig"/>
+    </event>
+</config>
+
