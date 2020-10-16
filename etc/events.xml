@@ -13,4 +13,3 @@
                   instance="GreenRivers\MaintenanceMode\Observer\SaveConfig"/>
     </event>
 </config>
-

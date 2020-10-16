@@ -45,7 +45,7 @@ define([
         },
 
         toggleElements: function () {
-            $('#row_maintenance_mode_page_content').toggle();
+            $('#maintenance_mode_custom_page tr:not(:first)').toggle();
         },
 
         /**

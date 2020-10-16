@@ -20,8 +20,9 @@ class Config extends AbstractHelper
     const XML_BACKEND_CONFIG_PATH = 'maintenance_mode/settings/backend';
     const XML_WHITELIST_IPS_CONFIG_PATH = 'maintenance_mode/settings/whitelist_ips';
 
-    const XML_CUSTOM_PAGE_CONFIG_PATH = 'maintenance_mode/page/custom';
-    const XML_PAGE_CONTENT_CONFIG_PATH = 'maintenance_mode/page/content';
+    const XML_CUSTOM_PAGE_ENABLED_CONFIG_PATH = 'maintenance_mode/custom_page/enabled';
+    const XML_CUSTOM_PAGE_STYLES_CONFIG_PATH = 'maintenance_mode/custom_page/styles';
+    const XML_CUSTOM_PAGE_CONTENT_CONFIG_PATH = 'maintenance_mode/custom_page/content';
 
     const XML_CRON_FRONTEND_ENABLED_CONFIG_PATH = 'maintenance_mode/cron/frontend/enabled';
     const XML_CRON_FRONTEND_FREQUENCY_CONFIG_PATH = 'maintenance_mode/cron/frontend/frequency';
@@ -87,17 +88,34 @@ class Config extends AbstractHelper
     /**
      * @return bool
      */
-    public function getCustomPageConfig(): bool
+    public function getCustomPageEnabledConfig(): bool
     {
-        return $this->scopeConfig->getValue(self::XML_CUSTOM_PAGE_CONFIG_PATH, ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            self::XML_CUSTOM_PAGE_ENABLED_CONFIG_PATH,
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
      * @return string
      */
-    public function getPageContentConfig(): string
+    public function getCustomPageStylesConfig(): string
     {
-        return $this->scopeConfig->getValue(self::XML_PAGE_CONTENT_CONFIG_PATH, ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            self::XML_CUSTOM_PAGE_STYLES_CONFIG_PATH,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomPageContentConfig(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_CUSTOM_PAGE_CONTENT_CONFIG_PATH,
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**

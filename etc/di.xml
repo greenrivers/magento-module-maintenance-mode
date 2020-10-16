@@ -12,6 +12,7 @@
         <plugin name="GreenRivers_MaintenanceMode::App_MaintenanceMode"
                 type="GreenRivers\MaintenanceMode\Plugin\App\MaintenanceMode"/>
     </type>
+
     <preference for="Magento\Framework\App\ExceptionHandler"
                 type="GreenRivers\MaintenanceMode\Preference\App\ExceptionHandler"/>
 </config>

@@ -17,9 +17,9 @@
                 <frontend>0</frontend>
                 <backend>0</backend>
             </settings>
-            <page>
-                <custom>0</custom>
-            </page>
+            <custom_page>
+                <enabled>0</enabled>
+            </custom_page>
             <cron>
                 <frontend>
                     <enabled>0</enabled>

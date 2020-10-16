@@ -1,9 +1,13 @@
 <?php
+/**
+ * @author GreenRivers Team
+ * @copyright Copyright (c) 2020 GreenRivers
+ * @package GreenRivers_MaintenanceMode
+ */
 
 use GreenRivers\MaintenanceMode\pub\errors\Processor;
 
 /** @var Processor $this */
-
 if ($this->overrideTemplate()) : ?>
     <?= /* @noEscape */ $this->getPageContent() ?>
 <?php else : ?>

@@ -19,7 +19,7 @@ class ToggleSwitch extends Field
     const MAINTENANCE_MODE_SETTINGS_FRONTEND = 'maintenance-mode-settings-frontend';
     const MAINTENANCE_MODE_SETTINGS_BACKEND = 'maintenance-mode-settings-backend';
 
-    const MAINTENANCE_MODE_PAGE_CUSTOM = 'maintenance-mode-page-custom';
+    const MAINTENANCE_MODE_CUSTOM_PAGE_ENABLED = 'maintenance-mode-custom-page-enabled';
 
     const MAINTENANCE_MODE_CRON_FRONTEND_ENABLED = 'maintenance-mode-cron-frontend-enabled';
     const MAINTENANCE_MODE_CRON_BACKEND_ENABLED = 'maintenance-mode-cron-backend-enabled';
@@ -66,8 +66,8 @@ class ToggleSwitch extends Field
             case self::MAINTENANCE_MODE_SETTINGS_BACKEND:
                 $component['value'] = $this->config->getBackendConfig();
                 break;
-            case self::MAINTENANCE_MODE_PAGE_CUSTOM:
-                $component['value'] = $this->config->getCustomPageConfig();
+            case self::MAINTENANCE_MODE_CUSTOM_PAGE_ENABLED:
+                $component['value'] = $this->config->getCustomPageEnabledConfig();
                 break;
             case self::MAINTENANCE_MODE_CRON_FRONTEND_ENABLED:
                 $component['value'] = $this->config->getCronFrontendEnabledConfig();
