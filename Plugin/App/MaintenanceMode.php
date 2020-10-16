@@ -52,6 +52,7 @@ class MaintenanceMode
                     && !$this->startsWith($url, $baseUrl . $adminUri)
                     && $this->config->getFrontendConfig())
                 || ($this->startsWith($url, $baseUrl . $adminUri) && $this->config->getBackendConfig()));
+            $result = $result && !$this->startsWith($url, $baseUrl . 'static');
         }
 
         return $result;
