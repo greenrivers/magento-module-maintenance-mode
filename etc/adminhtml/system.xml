@@ -81,15 +81,13 @@
                     <field id="frequency" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Frequency</label>
                         <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
-                        <backend_model>Magento\Cron\Model\Config\Backend\Product\Alert</backend_model>
+                        <backend_model>GreenRivers\MaintenanceMode\Model\Config\Backend\Cron\Frontend</backend_model>
                     </field>
-                    <field id="time_start" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="time_start" translate="label" type="time" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Time start</label>
-                        <frontend_model>GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\Time</frontend_model>
                     </field>
-                    <field id="time_end" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="time_end" translate="label" type="time" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Time end</label>
-                        <frontend_model>GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\Time</frontend_model>
                     </field>
                 </group>
                 <group id="backend" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0"
@@ -103,15 +101,13 @@
                     <field id="frequency" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Frequency</label>
                         <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
-                        <backend_model>Magento\Cron\Model\Config\Backend\Product\Alert</backend_model>
+                        <backend_model>GreenRivers\MaintenanceMode\Model\Config\Backend\Cron\Backend</backend_model>
                     </field>
-                    <field id="time_start" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="time_start" translate="label" type="time" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Time start</label>
-                        <frontend_model>GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\Time</frontend_model>
                     </field>
-                    <field id="time_end" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <field id="time_end" translate="label" type="time" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
                         <label>Time end</label>
-                        <frontend_model>GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\Time</frontend_model>
                     </field>
                 </group>
                 <field id="whitelist_ips" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"

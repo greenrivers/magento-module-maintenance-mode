@@ -39,9 +39,7 @@ class SaveConfig implements ObserverInterface
         $changedPaths = (array)$observer->getEvent()->getChangedPaths();
 
         if ($changedPaths && $this->config->getEnabledConfig()) {
-            $whitelistIps = $this->config->getWhitelistIpsConfig();
-            $ips = implode(',', array_column($whitelistIps, 'ip'));
-            $this->maintenanceMode->setAddresses($ips);
+            $this->maintenanceMode->setAddresses($this->config->getWhitelistIpsConfig());
             $this->maintenanceMode->set($this->config->getFrontendConfig() || $this->config->getBackendConfig());
         }
     }
