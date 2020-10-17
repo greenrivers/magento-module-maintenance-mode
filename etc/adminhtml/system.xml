@@ -52,7 +52,7 @@
                 <label>Custom page</label>
                 <field id="enabled" translate="label" type="checkbox" sortOrder="10" showInDefault="1" showInWebsite="1"
                        showInStore="1">
-                    <label>Custom page</label>
+                    <label>Enabled</label>
                     <frontend_model>GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch</frontend_model>
                 </field>
                 <field id="styles" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1"
