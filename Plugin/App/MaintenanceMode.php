@@ -8,33 +8,26 @@
 namespace GreenRivers\MaintenanceMode\Plugin\App;
 
 use GreenRivers\MaintenanceMode\Helper\Config;
-use Magento\Backend\Setup\ConfigOptionsList as BackendConfigOptionsList;
-use Magento\Framework\App\DeploymentConfig;
+use GreenRivers\MaintenanceMode\Helper\Status;
 use Magento\Framework\App\MaintenanceMode as Subject;
-use Magento\Framework\UrlInterface;
 
 class MaintenanceMode
 {
-    /** @var DeploymentConfig */
-    private $deploymentConfig;
-
     /** @var Config */
     private $config;
 
-    /** @var UrlInterface */
-    private $urlBuilder;
+    /** @var Status */
+    private $status;
 
     /**
      * MaintenanceMode constructor.
-     * @param DeploymentConfig $deploymentConfig
      * @param Config $config
-     * @param UrlInterface $urlBuilder
+     * @param Status $status
      */
-    public function __construct(DeploymentConfig $deploymentConfig, Config $config, UrlInterface $urlBuilder)
+    public function __construct(Config $config, Status $status)
     {
-        $this->deploymentConfig = $deploymentConfig;
         $this->config = $config;
-        $this->urlBuilder = $urlBuilder;
+        $this->status = $status;
     }
 
     /**
@@ -45,60 +38,9 @@ class MaintenanceMode
     public function afterIsOn(Subject $subject, bool $result): bool
     {
         if ($this->config->getEnabledConfig()) {
-            $result = $this->updateStatus($result);
+            $result = $this->status->updateStatus($result);
         }
 
         return $result;
-    }
-
-    /**
-     * @param bool $status
-     * @return bool
-     */
-    private function updateStatus(bool $status): bool
-    {
-        $url = $this->urlBuilder->getCurrentUrl();
-        $baseUrl = $this->urlBuilder->getBaseUrl();
-        $adminUri = $this->deploymentConfig->get(BackendConfigOptionsList::CONFIG_PATH_BACKEND_FRONTNAME);
-
-        return $status && (
-                $this->enabledOnFrontend($url, $baseUrl, $adminUri) ||
-                $this->enabledOnBackend($url, $baseUrl, $adminUri)
-            );
-    }
-
-    /**
-     * @param string $url
-     * @param string $baseUrl
-     * @param string $adminUri
-     * @return bool
-     */
-    private function enabledOnFrontend(string $url, string $baseUrl, string $adminUri): bool
-    {
-        return $this->config->getFrontendConfig()
-            && ($this->startsWith($url, $baseUrl) || $this->startsWith($url, $baseUrl . UrlInterface::URL_TYPE_STATIC))
-            && !$this->startsWith($url, $baseUrl . $adminUri);
-    }
-
-    /**
-     * @param string $url
-     * @param string $baseUrl
-     * @param string $adminUri
-     * @return bool
-     */
-    private function enabledOnBackend(string $url, string $baseUrl, string $adminUri): bool
-    {
-        return $this->config->getBackendConfig()
-            && ($this->startsWith($url, $baseUrl . $adminUri) || $this->startsWith($url, $baseUrl . UrlInterface::URL_TYPE_STATIC));
-    }
-
-    /**
-     * @param string $text
-     * @param string $search
-     * @return bool
-     */
-    private function startsWith(string $text, string $search): bool
-    {
-        return strpos($text, $search) === 0;
     }
 }
