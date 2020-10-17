@@ -15,4 +15,17 @@
 
     <preference for="Magento\Framework\App\ExceptionHandler"
                 type="GreenRivers\MaintenanceMode\Preference\App\ExceptionHandler"/>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="greenrivers_maintenance_mode_enable_command" xsi:type="object">
+                    GreenRivers\MaintenanceMode\Console\Command\Enable
+                </item>
+                <item name="greenrivers_maintenance_mode_disable_command" xsi:type="object">
+                    GreenRivers\MaintenanceMode\Console\Command\Disable
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

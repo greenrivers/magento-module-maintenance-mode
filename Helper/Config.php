@@ -7,6 +7,7 @@
 
 namespace GreenRivers\MaintenanceMode\Helper;
 
+use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Serialize\Serializer\Json as Serializer;
@@ -36,18 +37,23 @@ class Config extends AbstractHelper
 
     const XML_CRON_WHITELIST_IPS_CONFIG_PATH = 'maintenance_mode/cron/whitelist_ips';
 
+    /** @var WriterInterface */
+    private $configWriter;
+
     /** @var Serializer */
     private $serializer;
 
     /**
      * Config constructor.
      * @param Context $context
+     * @param WriterInterface $configWriter
      * @param Serializer $serializer
      */
-    public function __construct(Context $context, Serializer $serializer)
+    public function __construct(Context $context, WriterInterface $configWriter, Serializer $serializer)
     {
         parent::__construct($context);
 
+        $this->configWriter = $configWriter;
         $this->serializer = $serializer;
     }
 
@@ -221,5 +227,17 @@ class Config extends AbstractHelper
         );
 
         return implode(',', array_column($whitelistIps, 'ip'));
+    }
+
+    /**
+     * @param string $path
+     * @param $value
+     */
+    public function setValueConfig(string $path, $value): void
+    {
+        if (is_array($value)) {
+            $value = implode(',', $value);
+        }
+        $this->configWriter->save($path, $value);
     }
 }
