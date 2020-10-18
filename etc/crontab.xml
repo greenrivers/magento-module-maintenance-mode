@@ -18,11 +18,11 @@
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_frontend_disable/schedule/cron_expr</config_path>
         </job>
         <job instance="GreenRivers\MaintenanceMode\Cron\Backend" method="enable"
-             name="greenrivers_maintenance_mode_backend_enabled">
+             name="greenrivers_maintenance_mode_backend_enable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_backend_enable/schedule/cron_expr</config_path>
         </job>
         <job instance="GreenRivers\MaintenanceMode\Cron\Backend" method="disable"
-             name="greenrivers_maintenance_mode_backend_enabled">
+             name="greenrivers_maintenance_mode_backend_disable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_backend_disable/schedule/cron_expr</config_path>
         </job>
     </group>
