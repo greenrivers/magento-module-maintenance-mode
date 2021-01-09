@@ -1,10 +1,10 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'GreenRivers_MaintenanceMode', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Greenrivers_MaintenanceMode', __DIR__);

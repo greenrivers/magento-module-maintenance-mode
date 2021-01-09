@@ -1,14 +1,14 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Plugin\App;
+namespace Greenrivers\MaintenanceMode\Plugin\App;
 
-use GreenRivers\MaintenanceMode\Helper\Config;
-use GreenRivers\MaintenanceMode\Helper\Status;
+use Greenrivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Status;
 use Magento\Framework\App\MaintenanceMode as Subject;
 
 class MaintenanceMode

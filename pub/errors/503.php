@@ -1,16 +1,16 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-use GreenRivers\MaintenanceMode\Preference\App\ExceptionHandler;
+use Greenrivers\MaintenanceMode\Preference\App\ExceptionHandler;
 
 /** @var ExceptionHandler $this */
 require $this->getProcessorFactory();
 
-$processorFactory = new \GreenRivers\MaintenanceMode\pub\errors\ProcessorFactory();
+$processorFactory = new \Greenrivers\MaintenanceMode\pub\errors\ProcessorFactory();
 $processor = $processorFactory->createProcessor();
 $response = $processor->process503();
 $response->sendResponse();

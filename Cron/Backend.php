@@ -1,13 +1,13 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Cron;
+namespace Greenrivers\MaintenanceMode\Cron;
 
-use GreenRivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Config;
 use Magento\Framework\App\Cache\Manager;
 use Magento\Framework\App\MaintenanceMode;
 

@@ -1,10 +1,10 @@
 {
     "name": "greenrivers/maintenance-mode",
-    "description": "GreenRivers Maintenance Mode",
+    "description": "Greenrivers Maintenance Mode",
     "minimum-stability": "stable",
     "authors": [
         {
-            "name": "GreenRivers team",
+            "name": "Greenrivers team",
             "email": "support@greenrivers.it"
         }
     ],
@@ -21,7 +21,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "GreenRivers\\MaintenanceMode\\": ""
+            "Greenrivers\\MaintenanceMode\\": ""
         }
     }
 }

@@ -1,15 +1,15 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Test\Unit\Helper;
+namespace Greenrivers\MaintenanceMode\Test\Unit\Helper;
 
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
-use GreenRivers\MaintenanceMode\Helper\Config;
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
+use Greenrivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Serialize\Serializer\Json as Serializer;
 use PHPUnit\Framework\Constraint\IsType;

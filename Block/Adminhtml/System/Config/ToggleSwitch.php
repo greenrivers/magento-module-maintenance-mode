@@ -1,16 +1,16 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config;
+namespace Greenrivers\MaintenanceMode\Block\Adminhtml\System\Config;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use GreenRivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Config;
 
 class ToggleSwitch extends Field
 {
@@ -25,7 +25,7 @@ class ToggleSwitch extends Field
     const MAINTENANCE_MODE_CRON_BACKEND_ENABLED = 'maintenance-mode-cron-backend-enabled';
 
     /** @var string */
-    protected $_template = 'GreenRivers_MaintenanceMode::system/config/toggle_switch.phtml';
+    protected $_template = 'Greenrivers_MaintenanceMode::system/config/toggle_switch.phtml';
 
     /** @var Config */
     private $config;

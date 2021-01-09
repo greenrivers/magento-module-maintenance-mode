@@ -1,20 +1,18 @@
-# GreenRivers MaintenanceMode
+# Greenrivers MaintenanceMode
 
 Magento2 module maintenance mode.
 
 ## Requirements
 
 * PHP >= **7.1**
-* Magento >= **2.3.2**
+* Magento = **2.3.***
 
 ## Installation
 
 1. Module
 
-    ```php
-    composer require greenrivers/maintenance-mode
-    
-    php bin/magento module:enable GreenRivers_MaintenanceMode
+    ```shell    
+    php bin/magento module:enable Greenrivers_MaintenanceMode
     
     php bin/magento setup:upgrade
     

@@ -1,13 +1,13 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Observer;
+namespace Greenrivers\MaintenanceMode\Observer;
 
-use GreenRivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Config;
 use Magento\Framework\App\MaintenanceMode;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;

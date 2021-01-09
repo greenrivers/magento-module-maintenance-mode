@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <virtualType name="GreenRivers\MaintenanceMode\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+    <virtualType name="Greenrivers\MaintenanceMode\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
         <arguments>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
             <argument name="fileName" xsi:type="string">/var/log/greenrivers/maintenance_mode.log</argument>
         </arguments>
     </virtualType>
-    <virtualType name="GreenRivers\MaintenanceMode\Logger" type="Magento\Framework\Logger\Monolog">
+    <virtualType name="Greenrivers\MaintenanceMode\Logger" type="Magento\Framework\Logger\Monolog">
         <arguments>
-            <argument name="name" xsi:type="string">GreenRivers_MaintenanceMode Logger</argument>
+            <argument name="name" xsi:type="string">Greenrivers_MaintenanceMode Logger</argument>
             <argument name="handlers" xsi:type="array">
-                <item name="system" xsi:type="object">GreenRivers\MaintenanceMode\Logger\Handler</item>
+                <item name="system" xsi:type="object">Greenrivers\MaintenanceMode\Logger\Handler</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <type name="GreenRivers\MaintenanceMode\Model\Config\Backend\Cron">
+    <type name="Greenrivers\MaintenanceMode\Model\Config\Backend\Cron">
         <arguments>
-            <argument name="_logger" xsi:type="object">GreenRivers\MaintenanceMode\Logger</argument>
+            <argument name="_logger" xsi:type="object">Greenrivers\MaintenanceMode\Logger</argument>
         </arguments>
     </type>
 
     <type name="Magento\Framework\App\MaintenanceMode">
-        <plugin name="GreenRivers_MaintenanceMode::App_MaintenanceMode"
-                type="GreenRivers\MaintenanceMode\Plugin\App\MaintenanceMode"/>
+        <plugin name="Greenrivers_MaintenanceMode::App_MaintenanceMode"
+                type="Greenrivers\MaintenanceMode\Plugin\App\MaintenanceMode"/>
     </type>
 
     <preference for="Magento\Framework\App\ExceptionHandler"
-                type="GreenRivers\MaintenanceMode\Preference\App\ExceptionHandler"/>
+                type="Greenrivers\MaintenanceMode\Preference\App\ExceptionHandler"/>
 
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="greenrivers_maintenance_mode_enable_command" xsi:type="object">
-                    GreenRivers\MaintenanceMode\Console\Command\Enable
+                    Greenrivers\MaintenanceMode\Console\Command\Enable
                 </item>
                 <item name="greenrivers_maintenance_mode_disable_command" xsi:type="object">
-                    GreenRivers\MaintenanceMode\Console\Command\Disable
+                    Greenrivers\MaintenanceMode\Console\Command\Disable
                 </item>
             </argument>
         </arguments>

@@ -1,16 +1,16 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Test\Unit\Helper;
+namespace Greenrivers\MaintenanceMode\Test\Unit\Helper;
 
-use GreenRivers\MaintenanceMode\Helper\Config;
-use GreenRivers\MaintenanceMode\Helper\Status;
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
+use Greenrivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Status;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\UrlInterface;
 use PHPUnit\Framework\TestCase;

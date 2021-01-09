@@ -1,13 +1,13 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Preference\App;
+namespace Greenrivers\MaintenanceMode\Preference\App;
 
-use GreenRivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Helper\Config;
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\App\ExceptionHandler as BaseExceptionHandler;
 use Magento\Framework\App\Filesystem\DirectoryList;
@@ -80,7 +80,7 @@ class ExceptionHandler extends BaseExceptionHandler
             // phpcs:ignore Magento2.Security.IncludeFile
             require $this->filesystem
                 ->getDirectoryRead(DirectoryList::APP)
-                ->getAbsolutePath('code/GreenRivers/MaintenanceMode/pub/errors/503.php');
+                ->getAbsolutePath('code/Greenrivers/MaintenanceMode/pub/errors/503.php');
             return true;
         }
         if (Bootstrap::ERR_IS_INSTALLED == $bootstrapCode) {
@@ -124,6 +124,6 @@ class ExceptionHandler extends BaseExceptionHandler
     {
         return $this->filesystem
             ->getDirectoryRead(DirectoryList::APP)
-            ->getAbsolutePath('code/GreenRivers/MaintenanceMode/pub/errors/ProcessorFactory.php');
+            ->getAbsolutePath('code/Greenrivers/MaintenanceMode/pub/errors/ProcessorFactory.php');
     }
 }

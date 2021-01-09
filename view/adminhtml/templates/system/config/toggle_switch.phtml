@@ -1,11 +1,11 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-use GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch;
+use Greenrivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch;
 
 /** @var ToggleSwitch $block */
 $component = $block->getComponent();
@@ -26,7 +26,7 @@ $component = $block->getComponent();
         "Magento_Ui/js/core/app": {
         "components":{
           "<?= /* @noEscape */ $component['id'] ?>-scope":{
-            "component":"GreenRivers_MaintenanceMode/js/system/config/<?= /* @noEscape */ $component['id'] ?>",
+            "component":"Greenrivers_MaintenanceMode/js/system/config/<?= /* @noEscape */ $component['id'] ?>",
             "isChecked": <?= /* @noEscape */ json_encode($component['value']) ?>
           }
         }

@@ -1,20 +1,20 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Test\Unit\Block\Adminhtml\System\Config;
+namespace Greenrivers\MaintenanceMode\Test\Unit\Block\Adminhtml\System\Config;
 
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use PHPUnit\Framework\Constraint\IsType;
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
-use GreenRivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch;
-use GreenRivers\MaintenanceMode\Helper\Config;
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
-use GreenRivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
+use Greenrivers\MaintenanceMode\Block\Adminhtml\System\Config\ToggleSwitch;
+use Greenrivers\MaintenanceMode\Helper\Config;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
+use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
 
 class ToggleSwitchTest extends TestCase
 {

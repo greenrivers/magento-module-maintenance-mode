@@ -1,13 +1,13 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Model\Config\Backend\Cron;
+namespace Greenrivers\MaintenanceMode\Model\Config\Backend\Cron;
 
-use GreenRivers\MaintenanceMode\Model\Config\Backend\Cron;
+use Greenrivers\MaintenanceMode\Model\Config\Backend\Cron;
 
 class Frontend extends Cron
 {

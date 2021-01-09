@@ -1,27 +1,27 @@
 <?xml version="1.0" ?>
 <!--
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
     <group id="greenrivers">
-        <job instance="GreenRivers\MaintenanceMode\Cron\Frontend" method="enable"
+        <job instance="Greenrivers\MaintenanceMode\Cron\Frontend" method="enable"
              name="greenrivers_maintenance_mode_frontend_enable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_frontend_enable/schedule/cron_expr</config_path>
         </job>
-        <job instance="GreenRivers\MaintenanceMode\Cron\Frontend" method="disable"
+        <job instance="Greenrivers\MaintenanceMode\Cron\Frontend" method="disable"
              name="greenrivers_maintenance_mode_frontend_disable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_frontend_disable/schedule/cron_expr</config_path>
         </job>
-        <job instance="GreenRivers\MaintenanceMode\Cron\Backend" method="enable"
+        <job instance="Greenrivers\MaintenanceMode\Cron\Backend" method="enable"
              name="greenrivers_maintenance_mode_backend_enable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_backend_enable/schedule/cron_expr</config_path>
         </job>
-        <job instance="GreenRivers\MaintenanceMode\Cron\Backend" method="disable"
+        <job instance="Greenrivers\MaintenanceMode\Cron\Backend" method="disable"
              name="greenrivers_maintenance_mode_backend_disable">
             <config_path>crontab/greenrivers/jobs/greenrivers_maintenance_mode_backend_disable/schedule/cron_expr</config_path>
         </job>

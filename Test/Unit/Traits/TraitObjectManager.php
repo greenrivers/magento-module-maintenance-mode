@@ -1,11 +1,11 @@
 <?php
 /**
- * @author GreenRivers Team
- * @copyright Copyright (c) 2020 GreenRivers
- * @package GreenRivers_MaintenanceMode
+ * @author Greenrivers Team
+ * @copyright Copyright (c) 2021 Greenrivers
+ * @package Greenrivers_MaintenanceMode
  */
 
-namespace GreenRivers\MaintenanceMode\Test\Unit\Traits;
+namespace Greenrivers\MaintenanceMode\Test\Unit\Traits;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
