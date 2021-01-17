@@ -9,12 +9,10 @@ namespace Greenrivers\MaintenanceMode\Test\Unit\Helper;
 
 use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitObjectManager;
 use Greenrivers\MaintenanceMode\Helper\Config;
-use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Serialize\Serializer\Json as Serializer;
-use PHPUnit\Framework\Constraint\IsType;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 
 class ConfigTest extends TestCase
 {
@@ -23,13 +21,13 @@ class ConfigTest extends TestCase
     /** @var Config */
     private $config;
 
-    /** @var ScopeConfigInterface|PHPUnit_Framework_MockObject_MockObject */
+    /** @var ScopeConfigInterface|MockObject */
     private $scopeConfigMock;
 
-    /** @var Serializer|PHPUnit_Framework_MockObject_MockObject */
+    /** @var Serializer|MockObject */
     private $serializerMock;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->scopeConfigMock = $this->getMockBuilder(ScopeConfigInterface::class)
             ->disableOriginalConstructor()
@@ -92,17 +90,16 @@ class ConfigTest extends TestCase
     public function testGetWhitelistIpsConfig()
     {
         $value = '[{"ip":"127.0.0.1"},{"ip":"127.0.0.2"},{"ip":"127.0.0.3"}]';
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/settings/whitelist_ips', 'store')
             ->willReturn($value);
-        $this->serializerMock->expects(self::exactly(2))
+        $this->serializerMock->expects(self::once())
             ->method('unserialize')
             ->with($value)
             ->willReturn(json_decode($value, true));
 
         $this->assertEquals('127.0.0.1,127.0.0.2,127.0.0.3', $this->config->getWhitelistIpsConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getWhitelistIpsConfig());
     }
 
     /**
@@ -123,13 +120,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCustomPageStylesConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/custom_page/styles', 'store')
             ->willReturn('body {background: whitesmoke;}');
 
         $this->assertEquals('body {background: whitesmoke;}', $this->config->getCustomPageStylesConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCustomPageStylesConfig());
     }
 
     /**
@@ -137,13 +133,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCustomPageContentConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/custom_page/content', 'store')
             ->willReturn('<p>Maintenance mode unit test</p>');
 
         $this->assertEquals('<p>Maintenance mode unit test</p>', $this->config->getCustomPageContentConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCustomPageContentConfig());
     }
 
     /**
@@ -164,13 +159,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronFrontendFrequencyConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/frontend/frequency', 'store')
             ->willReturn('D');
 
         $this->assertEquals('D', $this->config->getCronFrontendFrequencyConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronFrontendFrequencyConfig());
     }
 
     /**
@@ -178,13 +172,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronFrontendTimeStartConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/frontend/time_start', 'store')
             ->willReturn('11,30,00');
 
         $this->assertEquals('11,30,00', $this->config->getCronFrontendTimeStartConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronFrontendTimeStartConfig());
     }
 
     /**
@@ -192,13 +185,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronFrontendTimeEndConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/frontend/time_end', 'store')
             ->willReturn('12,00,00');
 
         $this->assertEquals('12,00,00', $this->config->getCronFrontendTimeEndConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronFrontendTimeEndConfig());
     }
 
     /**
@@ -219,13 +211,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronBackendFrequencyConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/backend/frequency', 'store')
             ->willReturn('D');
 
         $this->assertEquals('D', $this->config->getCronBackendFrequencyConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronBackendFrequencyConfig());
     }
 
     /**
@@ -233,13 +224,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronBackendTimeStartConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/backend/time_start', 'store')
             ->willReturn('14,00,00');
 
         $this->assertEquals('14,00,00', $this->config->getCronBackendTimeStartConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronBackendTimeStartConfig());
     }
 
     /**
@@ -247,13 +237,12 @@ class ConfigTest extends TestCase
      */
     public function testGetCronBackendTimeEndConfig()
     {
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/backend/time_end', 'store')
             ->willReturn('14,15,00');
 
         $this->assertEquals('14,15,00', $this->config->getCronBackendTimeEndConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronBackendTimeEndConfig());
     }
 
     /**
@@ -262,16 +251,15 @@ class ConfigTest extends TestCase
     public function testGetCronWhitelistIpsConfig()
     {
         $value = '[{"ip":"127.0.0.5"},{"ip":"127.0.0.6"}]';
-        $this->scopeConfigMock->expects(self::exactly(2))
+        $this->scopeConfigMock->expects(self::once())
             ->method('getValue')
             ->with('maintenance_mode/cron/whitelist_ips', 'store')
             ->willReturn($value);
-        $this->serializerMock->expects(self::exactly(2))
+        $this->serializerMock->expects(self::once())
             ->method('unserialize')
             ->with($value)
             ->willReturn(json_decode($value, true));
 
         $this->assertEquals('127.0.0.5,127.0.0.6', $this->config->getCronWhitelistIpsConfig());
-        $this->assertInternalType(IsType::TYPE_STRING, $this->config->getCronWhitelistIpsConfig());
     }
 }

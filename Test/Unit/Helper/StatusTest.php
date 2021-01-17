@@ -14,7 +14,7 @@ use Greenrivers\MaintenanceMode\Test\Unit\Traits\TraitReflectionClass;
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\UrlInterface;
 use PHPUnit\Framework\TestCase;
-use PHPUnit_Framework_MockObject_MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 
 class StatusTest extends TestCase
 {
@@ -24,16 +24,16 @@ class StatusTest extends TestCase
     /** @var Status */
     private $status;
 
-    /** @var Config|PHPUnit_Framework_MockObject_MockObject */
+    /** @var Config|MockObject */
     private $configMock;
 
-    /** @var DeploymentConfig|PHPUnit_Framework_MockObject_MockObject */
+    /** @var DeploymentConfig|MockObject */
     private $deploymentConfigMock;
 
-    /** @var UrlInterface|PHPUnit_Framework_MockObject_MockObject */
+    /** @var UrlInterface|MockObject */
     private $urlBuilderMock;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->configMock = $this->getMockBuilder(Config::class)
             ->disableOriginalConstructor()

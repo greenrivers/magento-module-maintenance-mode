@@ -112,7 +112,7 @@ class Config extends AbstractHelper
         return $this->scopeConfig->getValue(
             self::XML_CUSTOM_PAGE_STYLES_CONFIG_PATH,
             ScopeInterface::SCOPE_STORE
-        );
+        ) ?? '';
     }
 
     /**
@@ -123,7 +123,7 @@ class Config extends AbstractHelper
         return $this->scopeConfig->getValue(
             self::XML_CUSTOM_PAGE_CONTENT_CONFIG_PATH,
             ScopeInterface::SCOPE_STORE
-        );
+        ) ?? '';
     }
 
     /**

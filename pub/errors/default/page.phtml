@@ -17,9 +17,11 @@ use Greenrivers\MaintenanceMode\pub\errors\Processor;
     <base href="<?= $this->getViewFileUrl() ?>"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="robots" content="*"/>
-    <style>
-        <?= $this->getPageStyles() ?>
-    </style>
+    <?php if ($this->overrideTemplate()): ?>
+        <style>
+            <?= $this->getPageStyles() ?>
+        </style>
+    <?php endif; ?>
 </head>
 <body>
 <main class="page-main">

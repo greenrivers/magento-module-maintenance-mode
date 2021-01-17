@@ -58,13 +58,11 @@
                 <field id="styles" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Styles</label>
-                    <validate>required-entry</validate>
                 </field>
                 <field id="content" translate="label" type="editor" sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Content</label>
                     <frontend_model>Greenrivers\MaintenanceMode\Block\Adminhtml\System\Config\Editor</frontend_model>
-                    <validate>required-entry</validate>
                 </field>
             </group>
             <group id="cron" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0"
