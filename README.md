@@ -12,6 +12,8 @@ Magento2 module maintenance mode.
 1. Module
 
     ```shell    
+   composer require greenrivers/maintenance-mode
+   
     php bin/magento module:enable Greenrivers_MaintenanceMode
     
     php bin/magento setup:upgrade
